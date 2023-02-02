@@ -4,17 +4,34 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity2">
 
     <Button
-        android:id="@+id/clerigo"
+        android:id="@+id/saiyan"
         android:layout_width="116dp"
         android:layout_height="52dp"
-        android:layout_marginEnd="56dp"
-        android:layout_marginBottom="152dp"
-        android:text="CLÉRIGO"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginBottom="64dp"
+        android:text="saiyan"
+        app:layout_constraintBottom_toTopOf="@+id/aceptar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/demonio"
+        app:layout_constraintTop_toBottomOf="@+id/elfo"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/elfo"
+        android:layout_width="114dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="448dp"
+        android:text="elfo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.797"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/aceptar"
@@ -28,42 +45,29 @@
         app:layout_constraintVertical_bias="0.935" />
 
     <Button
-        android:id="@+id/arquero"
+        android:id="@+id/demonio"
         android:layout_width="115dp"
         android:layout_height="50dp"
         android:layout_marginStart="64dp"
         android:layout_marginBottom="156dp"
-        android:text="ARQUERO"
+        android:text="demonio"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/guerrero"
+        android:id="@+id/enano"
         android:layout_width="113dp"
         android:layout_height="51dp"
         android:layout_marginStart="52dp"
         android:layout_marginTop="448dp"
-        android:text="GUERRERO"
-        app:layout_constraintBottom_toTopOf="@+id/arquero"
-        app:layout_constraintEnd_toStartOf="@+id/mago"
+        android:text="Enano"
+        app:layout_constraintBottom_toTopOf="@+id/demonio"
+        app:layout_constraintEnd_toStartOf="@+id/elfo"
         app:layout_constraintHorizontal_bias="0.169"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.076"
         tools:ignore="MissingConstraints" />
-
-    <Button
-        android:id="@+id/mago"
-        android:layout_width="114dp"
-        android:layout_height="51dp"
-        android:layout_marginTop="448dp"
-        android:text="MAGO"
-        app:layout_constraintBottom_toTopOf="@+id/clerigo"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.804"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.071" />
 
     <ImageView
         android:id="@+id/imageView"
@@ -77,5 +81,4 @@
         app:layout_constraintVertical_bias="0.091"
         tools:ignore="MissingConstraints"
         tools:srcCompat="@tools:sample/avatars" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,49 +1,41 @@
 package com.example.a7clases
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import com.example.a7clases.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-
-        val binding = ActivityMainBinding.inflate(layoutInflater)
+        binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        //mostrar imagen al pulsar el boton
-        binding.clerigo.setOnClickListener {
-            if(binding.clerigoI.visibility == View.INVISIBLE){
-                binding.clerigoI.visibility = View.VISIBLE
-            }else{
-                binding.clerigoI.visibility = View.INVISIBLE
-            }
-        }
+        var clase = ""
 
-        binding.mago.setOnClickListener {
-            if(binding.magoI.visibility == View.INVISIBLE){
-                binding.magoI.visibility = View.VISIBLE
-            }else{
-                binding.magoI.visibility = View.INVISIBLE
-            }
-        }
-
+        //cambiar imagen al pulsar el boton
         binding.guerrero.setOnClickListener {
-            if(binding.guerreroI.visibility == View.INVISIBLE){
-                binding.guerreroI.visibility = View.VISIBLE
-            }else{
-                binding.guerreroI.visibility = View.INVISIBLE
-            }
+            binding.imageView.setBackgroundResource(R.drawable.guerrero)
+            clase = "guerrero"
+        }
+        binding.mago.setOnClickListener {
+            binding.imageView.setBackgroundResource(R.drawable.mago)
+            clase = "mago"
+        }
+        binding.arquero.setOnClickListener {
+            binding.imageView.setBackgroundResource(R.drawable.arquero)
+            clase = "arquero"
+        }
+        binding.clerigo.setOnClickListener {
+            binding.imageView.setBackgroundResource(R.drawable.clerigo)
+            clase = "clerigo"
         }
 
-        binding.arquero.setOnClickListener {
-            if(binding.arqueroI.visibility == View.INVISIBLE){
-                binding.arqueroI.visibility = View.VISIBLE
-            }else{
-                binding.arqueroI.visibility = View.INVISIBLE
-            }
+
+        binding.aceptar.setOnClickListener {
+            val intent = Intent(this@MainActivity, MainActivity2::class.java)
+            startActivity(intent)
         }
 
     }

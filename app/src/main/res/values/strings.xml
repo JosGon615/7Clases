@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">7Clases</string>
+    <string name="nombre_del_personaje">Nombre del personaje</string>
+    <string name="todo">TODO</string>
+    <string name="fuerza">FUERZA:</string>
+    <string name="defensa">DEFENSA:</string>
+    <string name="mochila">MOCHILA:</string>
+    <string name="vida">VIDA:</string>
+    <string name="monedero">MONEDERO:</string>
+    <string name="textview">TextView</string>
 </resources>

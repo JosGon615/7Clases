@@ -15,17 +15,17 @@ class MainActivity2 : AppCompatActivity() {
         var raza = ""
 
         //cambiar imagen al pulsar el boton
-        binding.enano.setOnClickListener {
-            binding.imageView.setBackgroundResource(R.drawable.enano)
-            raza = "enano"
+        binding.androide.setOnClickListener {
+            binding.imageView.setBackgroundResource(R.drawable.androide)
+            raza = "androide"
         }
-        binding.elfo.setOnClickListener {
-            binding.imageView.setBackgroundResource(R.drawable.elfo)
-            raza = "elfo"
+        binding.namekiano.setOnClickListener {
+            binding.imageView.setBackgroundResource(R.drawable.namekiano)
+            raza = "namekiano"
         }
-        binding.demonio.setOnClickListener {
-            binding.imageView.setBackgroundResource(R.drawable.demonio)
-            raza = "demonio"
+        binding.terricola.setOnClickListener {
+            binding.imageView.setBackgroundResource(R.drawable.terricola)
+            raza = "terricola"
         }
         binding.saiyan.setOnClickListener {
             binding.imageView.setBackgroundResource(R.drawable.saiyan)

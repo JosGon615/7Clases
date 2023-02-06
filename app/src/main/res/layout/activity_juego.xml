@@ -6,4 +6,26 @@
     android:layout_height="match_parent"
     tools:context=".Juego">
 
+    <ImageView
+        android:id="@+id/landscape"
+        android:layout_width="409dp"
+        android:layout_height="251dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.011"
+        app:srcCompat="@drawable/land1" />
+
+    <ImageButton
+        android:id="@+id/dado"
+        android:layout_width="217dp"
+        android:layout_height="213dp"
+        android:background="#00FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.781"
+        app:srcCompat="@drawable/dado" />
 </androidx.constraintlayout.widget.ConstraintLayout>

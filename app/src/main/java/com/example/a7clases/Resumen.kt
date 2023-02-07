@@ -19,10 +19,10 @@ class Resumen : AppCompatActivity() {
 
         //seleccionar imagenes segun la clase y raza
         when (clase){
-            "guerrero" -> binding.claseI.setBackgroundResource(R.drawable.guerrerop)
-            "mago" -> binding.claseI.setBackgroundResource(R.drawable.magop)
-            "arquero" -> binding.claseI.setBackgroundResource(R.drawable.arquerop)
-            "clerigo" -> binding.claseI.setBackgroundResource(R.drawable.clerigop)
+            "kame" -> binding.claseI.setBackgroundResource(R.drawable.kamep)
+            "kaio" -> binding.claseI.setBackgroundResource(R.drawable.kaiop)
+            "go" -> binding.claseI.setBackgroundResource(R.drawable.gop)
+            "wish" -> binding.claseI.setBackgroundResource(R.drawable.wishp)
         }
 
         when (raza){

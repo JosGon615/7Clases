@@ -15,21 +15,21 @@ class MainActivity : AppCompatActivity() {
         var clase = ""
 
         //cambiar imagen al pulsar el boton
-        binding.guerrero.setOnClickListener {
-            binding.imageView.setBackgroundResource(R.drawable.guerrero)
-            clase = "guerrero"
+        binding.kame.setOnClickListener {
+            binding.imageView.setBackgroundResource(R.drawable.kamep)
+            clase = "kame"
         }
-        binding.mago.setOnClickListener {
-            binding.imageView.setBackgroundResource(R.drawable.mago)
-            clase = "mago"
+        binding.kaio.setOnClickListener {
+            binding.imageView.setBackgroundResource(R.drawable.kaiop)
+            clase = "kaio"
         }
-        binding.arquero.setOnClickListener {
-            binding.imageView.setBackgroundResource(R.drawable.arquero)
-            clase = "arquero"
+        binding.go.setOnClickListener {
+            binding.imageView.setBackgroundResource(R.drawable.gop)
+            clase = "go"
         }
-        binding.clerigo.setOnClickListener {
-            binding.imageView.setBackgroundResource(R.drawable.clerigo)
-            clase = "clerigo"
+        binding.wish.setOnClickListener {
+            binding.imageView.setBackgroundResource(R.drawable.wishp)
+            clase = "wish"
         }
 
 

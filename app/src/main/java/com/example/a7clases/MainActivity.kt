@@ -35,6 +35,7 @@ class MainActivity : AppCompatActivity() {
 
         binding.aceptar.setOnClickListener {
             val intent = Intent(this@MainActivity, MainActivity2::class.java)
+            intent.putExtra("clase", clase)
             startActivity(intent)
         }
 

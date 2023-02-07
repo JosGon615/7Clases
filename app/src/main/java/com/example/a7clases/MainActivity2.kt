@@ -12,7 +12,8 @@ class MainActivity2 : AppCompatActivity() {
         binding = ActivityMain2Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        var raza = ""
+         var raza = ""
+         var clase = intent.getStringExtra("clase")
 
         //cambiar imagen al pulsar el boton
         binding.androide.setOnClickListener {
@@ -35,8 +36,12 @@ class MainActivity2 : AppCompatActivity() {
 
         binding.aceptar.setOnClickListener {
             val intent = Intent(this@MainActivity2, Resumen::class.java)
+            intent.putExtra("raza", raza)
+            intent.putExtra("clase", clase)
             startActivity(intent)
         }
+
+
 
     }
 

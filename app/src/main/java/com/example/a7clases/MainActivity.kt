@@ -16,19 +16,19 @@ class MainActivity : AppCompatActivity() {
 
         //cambiar imagen al pulsar el boton
         binding.kame.setOnClickListener {
-            binding.imageView.setBackgroundResource(R.drawable.kamep)
+            binding.imageView.setBackgroundResource(R.drawable.kame)
             clase = "kame"
         }
         binding.kaio.setOnClickListener {
-            binding.imageView.setBackgroundResource(R.drawable.kaiop)
+            binding.imageView.setBackgroundResource(R.drawable.kaio)
             clase = "kaio"
         }
         binding.go.setOnClickListener {
-            binding.imageView.setBackgroundResource(R.drawable.gop)
+            binding.imageView.setBackgroundResource(R.drawable.go)
             clase = "go"
         }
         binding.wish.setOnClickListener {
-            binding.imageView.setBackgroundResource(R.drawable.wishp)
+            binding.imageView.setBackgroundResource(R.drawable.wish)
             clase = "wish"
         }
 

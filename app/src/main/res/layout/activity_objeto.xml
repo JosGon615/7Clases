@@ -17,7 +17,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.161"
-        app:srcCompat="@drawable/DB1"
+        app:srcCompat="@drawable/dbuno"
         tools:ignore="ContentDescription,HardcodedText,ImageContrastCheck" />
 
     <Button

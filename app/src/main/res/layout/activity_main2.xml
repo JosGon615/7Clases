@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/fondo2"
     tools:context=".MainActivity2">
 
     <Button
@@ -13,7 +14,9 @@
         android:layout_marginStart="53dp"
         android:layout_marginEnd="42dp"
         android:layout_marginBottom="16dp"
+        android:backgroundTint="#FF3D00"
         android:text="saiyan"
+        android:textColor="#3D5AFE"
         app:layout_constraintBottom_toTopOf="@+id/namekiano"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/androide" />
@@ -25,7 +28,9 @@
         android:layout_marginStart="50dp"
         android:layout_marginEnd="41dp"
         android:layout_marginBottom="76dp"
+        android:backgroundTint="#FF3D00"
         android:text="namekiano"
+        android:textColor="#3D5AFE"
         app:layout_constraintBottom_toTopOf="@+id/aceptar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -35,7 +40,9 @@
         android:id="@+id/aceptar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:backgroundTint="#3D5AFE"
         android:text="Aceptar"
+        android:textColor="#FF3D00"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -48,7 +55,9 @@
         android:layout_height="49dp"
         android:layout_marginStart="44dp"
         android:layout_marginBottom="168dp"
+        android:backgroundTint="#FF3D00"
         android:text="terrricola"
+        android:textColor="#3D5AFE"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -58,7 +67,9 @@
         android:layout_height="48dp"
         android:layout_marginStart="44dp"
         android:layout_marginBottom="18dp"
+        android:backgroundTint="#FF3D00"
         android:text="androide"
+        android:textColor="#3D5AFE"
         app:layout_constraintBottom_toTopOf="@+id/terricola"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="MissingConstraints" />

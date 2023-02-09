@@ -4,66 +4,78 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/fondo"
     tools:context=".MainActivity">
 
     <Button
         android:id="@+id/wish"
         android:layout_width="116dp"
         android:layout_height="52dp"
-        android:layout_marginEnd="56dp"
-        android:layout_marginBottom="152dp"
+        android:backgroundTint="#FF5722"
         android:text="WISH"
+        android:textColor="#3D5AFE"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.81"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.792" />
 
     <Button
         android:id="@+id/aceptar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:backgroundTint="#3D5AFE"
         android:text="Aceptar"
+        android:textColor="#FF3D00"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.935" />
+        app:layout_constraintVertical_bias="0.944" />
 
     <Button
         android:id="@+id/go"
         android:layout_width="115dp"
         android:layout_height="50dp"
-        android:layout_marginStart="64dp"
-        android:layout_marginBottom="156dp"
+        android:backgroundTint="#FF5722"
         android:text="GO"
+        android:textColor="#3D5AFE"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.192"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.79" />
 
     <Button
         android:id="@+id/kame"
         android:layout_width="113dp"
         android:layout_height="51dp"
-        android:layout_marginStart="52dp"
-        android:layout_marginTop="448dp"
+        android:backgroundTint="#FF5722"
         android:text="KAME"
-        app:layout_constraintBottom_toTopOf="@+id/go"
-        app:layout_constraintEnd_toStartOf="@+id/kaio"
-        app:layout_constraintHorizontal_bias="0.169"
+        android:textColor="#3D5AFE"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.197"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.076"
+        app:layout_constraintVertical_bias="0.677"
         tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/kaio"
         android:layout_width="114dp"
         android:layout_height="51dp"
-        android:layout_marginTop="448dp"
+        android:backgroundTint="#FF5722"
         android:text="KAIO"
-        app:layout_constraintBottom_toTopOf="@+id/wish"
+        android:textColor="#3D5AFE"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.804"
+        app:layout_constraintHorizontal_bias="0.811"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.071" />
+        app:layout_constraintVertical_bias="0.677" />
 
     <ImageView
         android:id="@+id/imageView"

@@ -3,6 +3,7 @@ package com.example.a7clases
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import com.example.a7clases.databinding.ActivityMain2Binding
 import com.example.a7clases.databinding.ActivityResumenBinding
 
@@ -47,8 +48,11 @@ class Resumen : AppCompatActivity() {
 
         //si pulsa comenzar, pasa a la pantalla de juego
         binding.comenzar.setOnClickListener {
+            print("hola")
             val intent = Intent(this@Resumen, Juego::class.java)
             startActivity(intent)
+
+
         }
 
     }

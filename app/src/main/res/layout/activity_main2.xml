@@ -19,7 +19,8 @@
         android:textColor="#3D5AFE"
         app:layout_constraintBottom_toTopOf="@+id/namekiano"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/androide" />
+        app:layout_constraintStart_toEndOf="@+id/androide"
+       />
 
     <Button
         android:id="@+id/namekiano"

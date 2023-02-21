@@ -5,39 +5,35 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.a7clases.databinding.ActivityJuegoBinding
 class Juego : AppCompatActivity() {
-    private lateinit var binding: ActivityJuegoBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityJuegoBinding.inflate(layoutInflater)
-        setContentView(R.layout.activity_juego)
+        val binding = ActivityJuegoBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        val array = arrayOf("Encontrar un Objeto", "Encontrar una Ciudad", "Encontrar un Mercader", "Encontrar un Enemigo")
-        var resultado = ""
+        var resultado = 0
 
         //funcion cuando se pulsa el dado se genera un resutlado aleatorio
         binding.dado.setOnClickListener {
-          resultado = array.random()
-        }
-
-        when(resultado){
-            "Encontrar un Objeto" -> {
+            resultado = 0
+           when(resultado){
+            0 -> {
                 val intent = Intent(this@Juego, Objeto::class.java)
                 startActivity(intent)
             }
-            "Encontrar una Ciudad" -> {
+            1 -> {
                 val intent = Intent(this@Juego, Ciudad::class.java)
                 startActivity(intent)
             }
-            "Encontrar un Mercader" -> {
+            2 -> {
                 val intent = Intent(this@Juego, Mercader::class.java)
                 startActivity(intent)
             }
-            "Encontrar un Enemigo" -> {
+            3 -> {
                 val intent = Intent(this@Juego, Enemigo::class.java)
                 startActivity(intent)
             }
         }
-
+        }
     }
-
 }

@@ -4,7 +4,6 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
-import com.example.a7clases.databinding.ActivityMain2Binding
 import com.example.a7clases.databinding.ActivityResumenBinding
 
 class Resumen : AppCompatActivity() {
@@ -13,6 +12,8 @@ class Resumen : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityResumenBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        val p1 = Personaje("", 0, "", "",0,0,0)
 
         //coger datos de la variable clase y raza
         val clase = intent.getStringExtra("clase")
@@ -51,9 +52,36 @@ class Resumen : AppCompatActivity() {
             print("hola")
             val intent = Intent(this@Resumen, Juego::class.java)
             startActivity(intent)
-
-
         }
+
+        //guardar valores en Personaje
+        binding.comenzar.setOnClickListener {
+            val fuerza = binding.fuerza.text.toString().toInt()
+            val defensa = binding.defensa.text.toString().toInt()
+            val vida = binding.vida.text.toString().toInt()
+            val mochila = binding.mochila.text.toString().toInt()
+            p1.setFuerza(fuerza)
+            p1.setDefensa(defensa)
+            p1.setVida(vida)
+            p1.setPesoMochila(mochila)
+            Toast.makeText(this, "Valores guardados", Toast.LENGTH_SHORT).show()
+        }
+
+        //comezar juego si se ha guardado el nombre
+        binding.comenzar.setOnClickListener {
+            p1.setNombre(binding.nombre.text.toString())
+            if (p1.getNombre() == ""){
+                Toast.makeText(this, "Debes guardar un nombre", Toast.LENGTH_SHORT).show()
+            }else{
+                Toast.makeText(this, "Nombre guardado", Toast.LENGTH_SHORT).show()
+                val intent = Intent(this@Resumen, Juego::class.java)
+                startActivity(intent)
+            }
+        }
+
+
+
+
 
     }
 }

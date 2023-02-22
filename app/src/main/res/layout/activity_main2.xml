@@ -11,31 +11,29 @@
         android:id="@+id/saiyan"
         android:layout_width="136dp"
         android:layout_height="48dp"
-        android:layout_marginStart="53dp"
-        android:layout_marginEnd="42dp"
-        android:layout_marginBottom="16dp"
         android:background="@drawable/button_s"
         android:text="saiyan"
         android:textColor="#3D5AFE"
-        app:layout_constraintBottom_toTopOf="@+id/namekiano"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/androide"
-       />
+        app:layout_constraintHorizontal_bias="0.843"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.663" />
 
     <Button
         android:id="@+id/namekiano"
         android:layout_width="138dp"
         android:layout_height="46dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginEnd="41dp"
-        android:layout_marginBottom="76dp"
         android:background="@drawable/button_s"
         android:text="namekiano"
         android:textColor="#3D5AFE"
-        app:layout_constraintBottom_toTopOf="@+id/aceptar"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/terricola" />
+        app:layout_constraintHorizontal_bias="0.849"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.754" />
 
     <Button
         android:id="@+id/aceptar"
@@ -54,25 +52,29 @@
         android:id="@+id/terricola"
         android:layout_width="138dp"
         android:layout_height="49dp"
-        android:layout_marginStart="44dp"
-        android:layout_marginBottom="168dp"
         android:background="@drawable/button_s"
         android:text="terrricola"
         android:textColor="#3D5AFE"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.157"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.758" />
 
     <Button
         android:id="@+id/androide"
         android:layout_width="137dp"
         android:layout_height="48dp"
-        android:layout_marginStart="44dp"
-        android:layout_marginBottom="18dp"
         android:background="@drawable/button_s"
         android:text="androide"
         android:textColor="#3D5AFE"
-        app:layout_constraintBottom_toTopOf="@+id/terricola"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.16"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.663"
         tools:ignore="MissingConstraints" />
 
     <ImageView

@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.a7clases.databinding.ActivityMain2Binding
+import com.google.gson.Gson
 
 class MainActivity2 : AppCompatActivity() {
     private lateinit var binding: ActivityMain2Binding
@@ -12,32 +13,39 @@ class MainActivity2 : AppCompatActivity() {
         binding = ActivityMain2Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
-         var raza = ""
-         var clase = intent.getStringExtra("clase")
+        val compartir = getSharedPreferences("Personaje", MODE_PRIVATE)
+        val gson = Gson()
+        var persString = compartir.getString("Personaje", "")
+        val pers = gson.fromJson(persString, Personaje::class.java)
+
+
 
         //cambiar imagen al pulsar el boton
         binding.androide.setOnClickListener {
             binding.imageView.setBackgroundResource(R.drawable.androide)
-            raza = "androide"
+            pers.setRaza("androide")
         }
         binding.namekiano.setOnClickListener {
             binding.imageView.setBackgroundResource(R.drawable.namekiano)
-            raza = "namekiano"
+            pers.setRaza("namekiano")
         }
         binding.terricola.setOnClickListener {
             binding.imageView.setBackgroundResource(R.drawable.terricola)
-            raza = "terricola"
+            pers.setRaza("terricola")
         }
         binding.saiyan.setOnClickListener {
             binding.imageView.setBackgroundResource(R.drawable.saiyan)
-            raza = "saiyan"
+            pers.setRaza("saiyan")
         }
 
 
         binding.aceptar.setOnClickListener {
+            val editor = compartir.edit()
+            persString = gson.toJson(pers)
+            editor.putString("Personaje", persString)
+            editor.apply()
+
             val intent = Intent(this@MainActivity2, Resumen::class.java)
-            intent.putExtra("raza", raza)
-            intent.putExtra("clase", clase)
             startActivity(intent)
         }
 

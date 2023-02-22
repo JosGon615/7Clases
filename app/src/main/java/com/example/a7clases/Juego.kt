@@ -15,7 +15,7 @@ class Juego : AppCompatActivity() {
 
         //funcion cuando se pulsa el dado se genera un resutlado aleatorio
         binding.dado.setOnClickListener {
-            resultado = 0
+            resultado = (0..3).random()
            when(resultado){
             0 -> {
                 val intent = Intent(this@Juego, Objeto::class.java)

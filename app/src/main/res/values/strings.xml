@@ -13,4 +13,8 @@
     <string name="comienza_la_aventura_pulsa_el_dado_para_avanzar_cuidado_puedes_encontrarte_enemigos">Comienza la aventura, pulsa el DADO para avanzar. CUIDADO puedes encontrarte enemigos</string>
     <string name="recoger">Recoger</string>
     <string name="continuar">continuar</string>
+    <string name="wish">WISH</string>
+    <string name="go">GO</string>
+    <string name="kame">KAME</string>
+    <string name="aceptar">Aceptar</string>
 </resources>

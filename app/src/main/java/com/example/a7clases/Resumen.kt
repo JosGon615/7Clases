@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import com.example.a7clases.databinding.ActivityResumenBinding
+import com.google.gson.Gson
 
 class Resumen : AppCompatActivity() {
     private lateinit var binding: ActivityResumenBinding
@@ -13,11 +14,15 @@ class Resumen : AppCompatActivity() {
         binding = ActivityResumenBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val p1 = Personaje("", 0, "", "",0,0,0)
+        val compartir = getSharedPreferences("Personaje", MODE_PRIVATE)
+        val gson = Gson()
+        var persString = compartir.getString("Personaje", "")
+        val pers = gson.fromJson(persString, Personaje::class.java)
+
 
         //coger datos de la variable clase y raza
-        val clase = intent.getStringExtra("clase")
-        val raza = intent.getStringExtra("raza")
+        val clase = pers.getClase()
+        val raza = pers.getRaza()
 
         //seleccionar imagenes segun la clase y raza
         when (clase){
@@ -50,31 +55,34 @@ class Resumen : AppCompatActivity() {
         //si pulsa comenzar, pasa a la pantalla de juego
         binding.comenzar.setOnClickListener {
             print("hola")
-            val intent = Intent(this@Resumen, Juego::class.java)
+            val intent = Intent(this@Resumen, Dado::class.java)
             startActivity(intent)
         }
 
-        //guardar valores en Personaje
+
+        //comezar juego si se ha guardado el nombre
         binding.comenzar.setOnClickListener {
             val fuerza = binding.fuerza.text.toString().toInt()
             val defensa = binding.defensa.text.toString().toInt()
             val vida = binding.vida.text.toString().toInt()
+            val nombre = binding.nombre.text.toString()
             val mochila = binding.mochila.text.toString().toInt()
-            p1.setFuerza(fuerza)
-            p1.setDefensa(defensa)
-            p1.setVida(vida)
-            p1.setPesoMochila(mochila)
-            Toast.makeText(this, "Valores guardados", Toast.LENGTH_SHORT).show()
-        }
+            pers.setFuerza(fuerza)
+            pers.setDefensa(defensa)
+            pers.setVida(vida)
+            pers.setNombre(nombre)
+            pers.setPesoMochila(mochila)
 
-        //comezar juego si se ha guardado el nombre
-        binding.comenzar.setOnClickListener {
-            p1.setNombre(binding.nombre.text.toString())
-            if (p1.getNombre() == ""){
+            val editor = compartir.edit()
+            persString = gson.toJson(pers)
+            editor.putString("Personaje", persString)
+            editor.apply()
+
+            if (pers.getNombre() == ""){
                 Toast.makeText(this, "Debes guardar un nombre", Toast.LENGTH_SHORT).show()
             }else{
-                Toast.makeText(this, "Nombre guardado", Toast.LENGTH_SHORT).show()
-                val intent = Intent(this@Resumen, Juego::class.java)
+                Toast.makeText(this, "Valores guardados", Toast.LENGTH_SHORT).show()
+                val intent = Intent(this@Resumen, Dado::class.java)
                 startActivity(intent)
             }
         }

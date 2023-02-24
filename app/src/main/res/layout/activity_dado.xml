@@ -4,12 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Juego">
+    android:background="@drawable/resumen"
+    tools:context=".Dado">
 
     <ImageView
         android:id="@+id/landscape"
-        android:layout_width="409dp"
-        android:layout_height="251dp"
+        android:layout_width="441dp"
+        android:layout_height="255dp"
         app:layout_constraintBottom_toBottomOf="@+id/imageButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -24,6 +25,7 @@
         android:layout_height="133dp"
         android:gravity="center"
         android:text="Comienza la aventura, pulsa el DADO para avanzar. CUIDADO puedes encontrarte enemigos."
+        android:textColor="#BFBEBE"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

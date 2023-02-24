@@ -17,4 +17,20 @@
     <string name="go">GO</string>
     <string name="kame">KAME</string>
     <string name="aceptar">Aceptar</string>
+    <string name="kaio">KAIO</string>
+    <string name="entrar">entrar</string>
+    <string name="comerciar">comerciar</string>
+    <string name="luchar">luchar</string>
+    <string name="huir">huir</string>
+    <string name="saiyan">saiyan</string>
+    <string name="namekiano">namekiano</string>
+    <string name="terrricola">terrricola</string>
+    <string name="androide">androide</string>
+    <string name="siete_esferas">Has reunido las siete esferas del dragón! Puedes pedir un deseo.</string>
+    <string name="compar">compar</string>
+    <string name="vender">vender</string>
+    <string name="cancelar">cancelar</string>
+    <string name="mas">+</string>
+    <string name="menos">-</string>
+    <string name="_0">0</string>
 </resources>

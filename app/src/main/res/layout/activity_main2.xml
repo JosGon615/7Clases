@@ -12,35 +12,37 @@
         android:layout_width="136dp"
         android:layout_height="48dp"
         android:background="@drawable/button_s"
-        android:text="saiyan"
+        android:text="@string/saiyan"
         android:textColor="#3D5AFE"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.843"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.663" />
+        app:layout_constraintVertical_bias="0.663"
+        tools:ignore="TextContrastCheck" />
 
     <Button
         android:id="@+id/namekiano"
         android:layout_width="138dp"
         android:layout_height="46dp"
         android:background="@drawable/button_s"
-        android:text="namekiano"
+        android:text="@string/namekiano"
         android:textColor="#3D5AFE"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.849"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.754" />
+        app:layout_constraintVertical_bias="0.754"
+        tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
 
     <Button
         android:id="@+id/aceptar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/button_done"
-        android:text="Aceptar"
+        android:text="@string/aceptar"
         android:textColor="#000000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -53,21 +55,22 @@
         android:layout_width="138dp"
         android:layout_height="49dp"
         android:background="@drawable/button_s"
-        android:text="terrricola"
+        android:text="@string/terrricola"
         android:textColor="#3D5AFE"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.157"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.758" />
+        app:layout_constraintVertical_bias="0.758"
+        tools:ignore="TextContrastCheck" />
 
     <Button
         android:id="@+id/androide"
         android:layout_width="137dp"
         android:layout_height="48dp"
         android:background="@drawable/button_s"
-        android:text="androide"
+        android:text="@string/androide"
         android:textColor="#3D5AFE"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -75,7 +78,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.663"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints,TextContrastCheck" />
 
     <ImageView
         android:id="@+id/imageView"
@@ -87,6 +90,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.091"
-        tools:ignore="MissingConstraints"
+        tools:ignore="ContentDescription,MissingConstraints,ImageContrastCheck"
         tools:srcCompat="@tools:sample/avatars" />
 </androidx.constraintlayout.widget.ConstraintLayout>

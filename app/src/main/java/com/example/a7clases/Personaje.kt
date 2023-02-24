@@ -1,27 +1,27 @@
 package com.example.a7clases
 
 class Personaje{
-    var nombre: String = ""
-    var pesoMochila: Int = 0
-    var raza: String = ""
-    var clase: String = ""
-    var fuerza: Int = 0
-    var defensa: Int = 0
-    var vida: Int = 0
+    private var nombre: String = ""
+    private var pesoMochila: Int = 0
+    private var raza: String = ""
+    private var clase: String = ""
+    private var fuerza: Int = 0
+    private var defensa: Int = 0
+    private var vida: Int = 0
     var mochila:ArrayList<ObjetoC> = ArrayList<ObjetoC>()
 
     constructor()
 
-    constructor(nombre: String, raza: String, clase: String, fuerza: Int, defensa: Int, vida: Int, mochila:ArrayList<ObjetoC>, pesoMochila: Int){
-            this.nombre = nombre
-            this.raza = raza
-            this.clase = clase
-            this.fuerza = fuerza
-            this.defensa = defensa
-            this.vida = vida
-            this.mochila = ArrayList<ObjetoC>()
+    constructor(nombre: String, pesoMochila: Int, raza: String, clase: String, fuerza: Int, defensa: Int, vida: Int, mochila: ArrayList<ObjetoC>){
+        this.nombre = nombre
+        this.pesoMochila = pesoMochila
+        this.raza = raza
+        this.clase = clase
+        this.fuerza = fuerza
+        this.defensa = defensa
+        this.vida = vida
+        this.mochila = mochila
     }
-
 
     fun getNombre(): String{
         return nombre
@@ -78,20 +78,6 @@ class Personaje{
     fun setVida(vida: Int){
         this.vida = vida
     }
-
-    fun getMochila(): ArrayList<ObjetoC>{
-        return mochila
-    }
-
-    fun setMochila(mochila: ArrayList<ObjetoC>){
-        this.mochila = mochila
-    }
-
-
-
-
-
-
 
 }
 

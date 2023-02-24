@@ -11,15 +11,16 @@
         android:id="@+id/wish"
         android:layout_width="116dp"
         android:layout_height="52dp"
-        android:textColor="#3D5AFE"
         android:background="@drawable/button_s"
         android:text="@string/wish"
+        android:textColor="#3D5AFE"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.81"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.792" />
+        app:layout_constraintVertical_bias="0.792"
+        tools:ignore="TextContrastCheck" />
 
     <Button
         android:id="@+id/aceptar"
@@ -46,7 +47,8 @@
         app:layout_constraintHorizontal_bias="0.192"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.79" />
+        app:layout_constraintVertical_bias="0.79"
+        tools:ignore="TextContrastCheck" />
 
     <Button
         android:id="@+id/kame"
@@ -61,21 +63,22 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.677"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints,TextContrastCheck" />
 
     <Button
         android:id="@+id/kaio"
         android:layout_width="114dp"
         android:layout_height="51dp"
         android:background="@drawable/button_s"
-        android:text="KAIO"
+        android:text="@string/kaio"
         android:textColor="#3D5AFE"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.811"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.677" />
+        app:layout_constraintVertical_bias="0.677"
+        tools:ignore="TextContrastCheck" />
 
     <ImageView
         android:id="@+id/imageView"
@@ -87,7 +90,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.109"
-        tools:ignore="MissingConstraints"
+        tools:ignore="ContentDescription,ImageContrastCheck,ImageContrastCheck,MissingConstraints"
         tools:srcCompat="@tools:sample/avatars" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

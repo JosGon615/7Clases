@@ -19,13 +19,13 @@ class Objeto : AppCompatActivity() {
         var persString = compartir.getString("Personaje", "")
         val pers = gson.fromJson(persString, Personaje::class.java)
 
-        val db1 = ObjetoC("Dragon Ball 1", 50,10,20)
-        val db2 = ObjetoC("Dragon Ball 2", 50,10,20)
-        val db3 = ObjetoC("Dragon Ball 3", 50,10,20)
-        val db4 = ObjetoC("Dragon Ball 4", 50,10,20)
-        val db5 = ObjetoC("Dragon Ball 5", 50,10,20)
-        val db6 = ObjetoC("Dragon Ball 6", 50,10,20)
-        val db7 = ObjetoC("Dragon Ball 7", 50,10,20)
+        val db1 = ObjetoC("Dragon Ball 1", 10,100,20)
+        val db2 = ObjetoC("Dragon Ball 2", 10,100,20)
+        val db3 = ObjetoC("Dragon Ball 3", 10,100,20)
+        val db4 = ObjetoC("Dragon Ball 4", 10,100,20)
+        val db5 = ObjetoC("Dragon Ball 5", 10,100,20)
+        val db6 = ObjetoC("Dragon Ball 6", 10,100,20)
+        val db7 = ObjetoC("Dragon Ball 7", 10,10,20)
 
 
 
@@ -71,20 +71,44 @@ class Objeto : AppCompatActivity() {
             }
         }
 
+        //solo se puede recoger una bola de dragon de cada tipo
+
+
+
         binding.recoger.setOnClickListener {
             if(pers.getPesoMochila() >= objeto.peso){
-                pers.mochila.add(objeto)
-                pers.setPesoMochila(pers.getPesoMochila() - objeto.peso)
-            }
-            else if (pers.mochila.contains(db1) || pers.mochila.contains(db2) || pers.mochila.contains(db3) || pers.mochila.contains(db4) || pers.mochila.contains(db5) || pers.mochila.contains(db6) || pers.mochila.contains(db7)){
-                Toast.makeText(this, "Ya posees esta Dragon Ball", Toast.LENGTH_SHORT).show()
+                if (objeto == db1 && pers.mochila.contains(db1)){
+                    Toast.makeText(this, "Ya posees ${objeto.nombre}", Toast.LENGTH_SHORT).show()
+                }
+                else if(objeto == db2 && pers.mochila.contains(db2)){
+                    Toast.makeText(this, "Ya posees ${objeto.nombre}", Toast.LENGTH_SHORT).show()
+                }
+                else if(objeto.nombre == "Dragon Ball 3" && pers.mochila.contains(db3)){
+                    Toast.makeText(this, "Ya posees ${objeto.nombre}", Toast.LENGTH_SHORT).show()
+                }
+                else if(objeto.nombre == "Dragon Ball 4" && pers.mochila.contains(db4)){
+                    Toast.makeText(this, "Ya posees ${objeto.nombre}", Toast.LENGTH_SHORT).show()
+                }
+                else if(objeto.nombre == "Dragon Ball 5" && pers.mochila.contains(db5)){
+                    Toast.makeText(this, "Ya posees ${objeto.nombre}", Toast.LENGTH_SHORT).show()
+                }
+                else if(objeto.nombre == "Dragon Ball 6" && pers.mochila.contains(db6)){
+                    Toast.makeText(this, "Ya posees ${objeto.nombre}", Toast.LENGTH_SHORT).show()
+                }
+                else if(objeto == db7 && pers.mochila.contains(db7)){
+                    Toast.makeText(this, "Ya posees ${objeto.nombre}", Toast.LENGTH_SHORT).show()
+                }
+                else{
+                    pers.mochila.add(objeto)
+                    pers.setPesoMochila(pers.getPesoMochila() - objeto.peso)
+                    Toast.makeText(this, "Has recogido ${objeto.nombre}", Toast.LENGTH_SHORT).show()
+                }
             }
             else{
-                Toast.makeText(this, "No puedes recoger más objetos", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "No tienes espacio en la mochila", Toast.LENGTH_SHORT).show()
             }
         }
-
-        binding.continuar.setOnClickListener {
+            binding.continuar.setOnClickListener {
             val editor = compartir.edit()
             persString = gson.toJson(pers)
             editor.putString("Personaje", persString)
@@ -94,8 +118,5 @@ class Objeto : AppCompatActivity() {
             startActivity(intent)
 
         }
-
-        println(pers.mochila.joinToString(", "))
-
     }
 }

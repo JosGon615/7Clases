@@ -5,6 +5,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import com.example.a7clases.databinding.ActivityMercaderBinding
 import com.google.gson.Gson
 
@@ -21,6 +22,9 @@ class Mercader : AppCompatActivity() {
         val persString = compartir.getString("Personaje", "")
         val pers = gson.fromJson(persString, Personaje::class.java)
 
+        var objeto = ObjetoC("Scouter", 5,10,20)
+        var cantidad = 0
+
         binding.continuarM.setOnClickListener(){
             val intent = Intent(this@Mercader, Dado::class.java)
             startActivity(intent)
@@ -33,10 +37,15 @@ class Mercader : AppCompatActivity() {
             binding.cancelar.visibility = View.VISIBLE
             binding.comprar.visibility = View.VISIBLE
             binding.vender.visibility = View.VISIBLE
+
+            binding.mas.visibility = View.VISIBLE
+            binding.menos.visibility = View.VISIBLE
+            binding.cantidad.visibility = View.VISIBLE
         }
 
         //al pulsar el boton de cancelar, se ocultan los botones de cancelar, comprar y vender y aparece el de comerciar y continuar
         binding.cancelar.setOnClickListener(){
+            binding.mercader.setImageResource(R.drawable.baba)
             binding.comerciar.visibility = View.VISIBLE
             binding.continuarM.visibility = View.VISIBLE
             binding.cancelar.visibility = View.GONE
@@ -48,20 +57,47 @@ class Mercader : AppCompatActivity() {
         }
 
         //al pulsar el boton comprar, se ocultan los botones de cancelar y vender
-        binding.comprar.setOnClickListener(){
-            binding.mercader.setImageResource(R.drawable.scouter)
-
-            binding.mas.visibility = View.VISIBLE
-            binding.menos.visibility = View.VISIBLE
-            binding.cantidad.visibility = View.VISIBLE
-        }
         binding.mas.setOnClickListener(){
-            binding.cantidad.text = (binding.cantidad.text.toString().toInt() + 1).toString()
+            cantidad = (binding.cantidad.text.toString().toInt() + 1)
+            binding.cantidad.text = cantidad.toString()
         }
         binding.menos.setOnClickListener(){
             if(binding.cantidad.text.toString().toInt() > 0){
-                binding.cantidad.text = (binding.cantidad.text.toString().toInt() - 1).toString()
+                cantidad= (binding.cantidad.text.toString().toInt() - 1)
+                binding.cantidad.text = cantidad.toString()
             }
         }
+
+        //boton comprar
+        binding.comprar.setOnClickListener(){
+
+
+            if(cantidad * objeto.peso <= pers.getPesoMochila()){
+                pers.mochila.add(objeto)
+                pers.setPesoMochila(pers.getPesoMochila() - objeto.peso*cantidad)
+                Toast.makeText(this, "Has comprado ${cantidad} ${objeto.nombre}", Toast.LENGTH_SHORT).show()
+            }
+            else{
+                Toast.makeText(this, "No tienes espacio en la mochila", Toast.LENGTH_SHORT).show()
+            }
+        }
+
+        //boton vender
+        binding.vender.setOnClickListener(){
+            binding.mercader.setImageResource(R.drawable.mochila)
+
+            binding.confirmar.set
+            if(pers.mochila.contains(objeto)){
+                pers.mochila.remove(objeto)
+                pers.setPesoMochila(pers.getPesoMochila() + objeto.peso*cantidad)
+                Toast.makeText(this, "Has vendido ${cantidad} ${objeto.nombre}", Toast.LENGTH_SHORT).show()
+            }
+            else{
+                Toast.makeText(this, "No tienes ${objeto.nombre} en la mochila", Toast.LENGTH_SHORT).show()
+            }
+        }
+
+
     }
+
 }

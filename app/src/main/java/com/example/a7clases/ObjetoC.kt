@@ -1,7 +1,7 @@
 package com.example.a7clases
 
 class ObjetoC {
-    private var nombre: String = ""
+    var nombre: String = ""
     var peso: Int = 0
     var valor: Int = 0
     var vida: Int = 0
@@ -15,12 +15,9 @@ class ObjetoC {
 
     constructor()
 
-    fun getNombre(): String {
+    override fun toString(): String {
         return nombre
     }
 
-    fun setNombre(nombre: String) {
-        this.nombre = nombre
-    }
 
 }

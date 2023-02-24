@@ -79,5 +79,10 @@ class Personaje{
         this.vida = vida
     }
 
+    override fun toString(): String {
+        return "Personaje(mochila=$mochila)"
+    }
+
+
 }
 

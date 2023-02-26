@@ -26,18 +26,20 @@ class Objeto : AppCompatActivity() {
         val db5 = ObjetoC("Dragon Ball 5", 10,100,20)
         val db6 = ObjetoC("Dragon Ball 6", 10,100,20)
         val db7 = ObjetoC("Dragon Ball 7", 10,10,20)
+        val radar = ObjetoC("Radar", 5,10,20)
+        val senzu = ObjetoC("Senzu", 5,10,20)
 
 
 
-        var aleatorio= (1..50).random()
+        val aleatorio= (1..50).random()
         var objeto = ObjetoC()
 
         when(aleatorio){
             in 1..10-> {binding.objeto.setBackgroundResource(R.drawable.senzu)
-                objeto = ObjetoC("Senzu", 5,10,20)
+                objeto = senzu
             }
             in 11..30-> {binding.objeto.setBackgroundResource(R.drawable.radar)
-                objeto = ObjetoC("Radar", 5,10,20)
+                objeto = radar
             }
 
             in 30..33 -> {binding.objeto.setBackgroundResource(R.drawable.dbuno)
@@ -72,36 +74,15 @@ class Objeto : AppCompatActivity() {
         }
 
         //solo se puede recoger una bola de dragon de cada tipo
-
-
-
         binding.recoger.setOnClickListener {
             if(pers.getPesoMochila() >= objeto.peso){
-                if (objeto == db1 && pers.mochila.contains(db1)){
-                    Toast.makeText(this, "Ya posees ${objeto.nombre}", Toast.LENGTH_SHORT).show()
-                }
-                else if(objeto == db2 && pers.mochila.contains(db2)){
-                    Toast.makeText(this, "Ya posees ${objeto.nombre}", Toast.LENGTH_SHORT).show()
-                }
-                else if(objeto.nombre == "Dragon Ball 3" && pers.mochila.contains(db3)){
-                    Toast.makeText(this, "Ya posees ${objeto.nombre}", Toast.LENGTH_SHORT).show()
-                }
-                else if(objeto.nombre == "Dragon Ball 4" && pers.mochila.contains(db4)){
-                    Toast.makeText(this, "Ya posees ${objeto.nombre}", Toast.LENGTH_SHORT).show()
-                }
-                else if(objeto.nombre == "Dragon Ball 5" && pers.mochila.contains(db5)){
-                    Toast.makeText(this, "Ya posees ${objeto.nombre}", Toast.LENGTH_SHORT).show()
-                }
-                else if(objeto.nombre == "Dragon Ball 6" && pers.mochila.contains(db6)){
-                    Toast.makeText(this, "Ya posees ${objeto.nombre}", Toast.LENGTH_SHORT).show()
-                }
-                else if(objeto == db7 && pers.mochila.contains(db7)){
-                    Toast.makeText(this, "Ya posees ${objeto.nombre}", Toast.LENGTH_SHORT).show()
-                }
-                else{
+                if(!pers.mochila.contains(objeto)){
                     pers.mochila.add(objeto)
                     pers.setPesoMochila(pers.getPesoMochila() - objeto.peso)
                     Toast.makeText(this, "Has recogido ${objeto.nombre}", Toast.LENGTH_SHORT).show()
+                }
+                else{
+                    Toast.makeText(this, "Ya tienes este objeto", Toast.LENGTH_SHORT).show()
                 }
             }
             else{

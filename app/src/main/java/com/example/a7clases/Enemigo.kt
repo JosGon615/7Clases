@@ -16,5 +16,10 @@ class Enemigo : AppCompatActivity() {
             val intent = Intent(this@Enemigo, Dado::class.java)
             startActivity(intent)
         }
+
+        binding.luchar.setOnClickListener {
+            val intent = Intent(this@Enemigo, Combate::class.java)
+            startActivity(intent)
+        }
     }
 }

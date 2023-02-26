@@ -22,39 +22,39 @@ class Dado : AppCompatActivity() {
 
         //funcion cuando se pulsa el dado se genera un resutlado aleatorio
         binding.dado.setOnClickListener {
-            resultado = (0..3).random()
+            resultado = 0
             when (resultado) {
                 0 -> {
+                    val editor = compartir.edit()
+                    persString = gson.toJson(pers)
+                    editor.putString("Personaje", persString)
+                    editor.apply()
                     val intent = Intent(this@Dado, Objeto::class.java)
                     startActivity(intent)
-                    val editor = compartir.edit()
-                    persString = gson.toJson(pers)
-                    editor.putString("Personaje", persString)
-                    editor.apply()
                 }
                 1 -> {
+                    val editor = compartir.edit()
+                    persString = gson.toJson(pers)
+                    editor.putString("Personaje", persString)
+                    editor.apply()
                     val intent = Intent(this@Dado, Ciudad::class.java)
                     startActivity(intent)
-                    val editor = compartir.edit()
-                    persString = gson.toJson(pers)
-                    editor.putString("Personaje", persString)
-                    editor.apply()
                 }
                 2 -> {
+                    val editor = compartir.edit()
+                    persString = gson.toJson(pers)
+                    editor.putString("Personaje", persString)
+                    editor.apply()
                     val intent = Intent(this@Dado, Mercader::class.java)
                     startActivity(intent)
-                    val editor = compartir.edit()
-                    persString = gson.toJson(pers)
-                    editor.putString("Personaje", persString)
-                    editor.apply()
                 }
                 3 -> {
-                    val intent = Intent(this@Dado, Enemigo::class.java)
-                    startActivity(intent)
                     val editor = compartir.edit()
                     persString = gson.toJson(pers)
                     editor.putString("Personaje", persString)
                     editor.apply()
+                    val intent = Intent(this@Dado, Enemigo::class.java)
+                    startActivity(intent)
                 }
 
             }

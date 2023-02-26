@@ -3,6 +3,7 @@ package com.example.a7clases
 class Personaje{
     private var nombre: String = ""
     private var pesoMochila: Int = 0
+    private var dinero: Int = 0
     private var raza: String = ""
     private var clase: String = ""
     private var fuerza: Int = 0
@@ -29,6 +30,14 @@ class Personaje{
 
     fun setNombre(nombre: String){
         this.nombre = nombre
+    }
+
+    fun getDinero(): Int{
+        return dinero
+    }
+
+    fun setDinero(dinero: Int){
+        this.dinero = dinero
     }
 
     fun getPesoMochila(): Int{

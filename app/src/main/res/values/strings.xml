@@ -33,4 +33,8 @@
     <string name="mas">+</string>
     <string name="menos">-</string>
     <string name="_0">0</string>
+    <string name="confirmar">confirmar</string>
+    <string name="salir">salir</string>
+    <string name="objeto">objeto</string>
+    <string name="atacar">atacar</string>
 </resources>

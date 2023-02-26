@@ -44,7 +44,7 @@ class Resumen : AppCompatActivity() {
         binding.defensa.text = (1..15).random().toString()
         binding.vida.text = 200.toString()
         binding.mochila.text = 100.toString()
-        binding.monedero.text = 0.toString()
+        binding.monedero.text = 9999.toString()
 
         //si pulsa volver, vuelve a la pantalla principal
         binding.volver.setOnClickListener {
@@ -67,11 +67,13 @@ class Resumen : AppCompatActivity() {
             val vida = binding.vida.text.toString().toInt()
             val nombre = binding.nombre.text.toString()
             val mochila = binding.mochila.text.toString().toInt()
+            val dinero = binding.monedero.text.toString().toInt()
             pers.setFuerza(fuerza)
             pers.setDefensa(defensa)
             pers.setVida(vida)
             pers.setNombre(nombre)
             pers.setPesoMochila(mochila)
+            pers.setDinero(dinero)
 
             val editor = compartir.edit()
             persString = gson.toJson(pers)

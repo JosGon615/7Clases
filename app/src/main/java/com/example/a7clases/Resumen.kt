@@ -44,7 +44,7 @@ class Resumen : AppCompatActivity() {
         binding.defensa.text = (1..5).random().toString()
         binding.vida.text = 200.toString()
         binding.mochila.text = 100.toString()
-        binding.monedero.text = 0.toString()
+        binding.monedero.text = 1000.toString()
 
         //si pulsa volver, vuelve a la pantalla principal
         binding.volver.setOnClickListener {

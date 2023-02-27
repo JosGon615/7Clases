@@ -18,16 +18,17 @@ class Mochila : AppCompatActivity() {
 
         val compartir = getSharedPreferences("Personaje", MODE_PRIVATE)
         val gson = Gson()
-        val persString = compartir.getString("Personaje", "")
+        var persString = compartir.getString("Personaje", "")
         val pers = gson.fromJson(persString, Personaje::class.java)
-
-        val mochila = pers.mochila
-
-        binding.MochilaObj.text = pers.mochila.toString()
 
         binding.MochilaObj.text = "Objetos: ${pers.mochila} \n"
 
         binding.salir.setOnClickListener {
+            val editor = compartir.edit()
+            persString = gson.toJson(pers)
+            editor.putString("Personaje", persString)
+            editor.apply()
+
             val intent = Intent(this@Mochila, Dado::class.java)
             startActivity(intent)
         }

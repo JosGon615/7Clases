@@ -21,7 +21,7 @@ class Shenron : AppCompatActivity() {
 
         binding.poder.setOnClickListener {
             pers.setFuerza(pers.getFuerza() * 2)
-            Toast.makeText(this, "Tu fuerza ha aumentado", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Tu fuerza ha aumnetado a ${pers.getFuerza()}", Toast.LENGTH_SHORT).show()
 
             val editor = compartir.edit()
             persString = gson.toJson(pers)

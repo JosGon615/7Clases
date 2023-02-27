@@ -8,6 +8,7 @@ import android.view.View
 import android.widget.Toast
 import com.example.a7clases.databinding.ActivityMercaderBinding
 import com.google.gson.Gson
+import java.lang.Thread.sleep
 
 class Mercader : AppCompatActivity() {
     private lateinit var binding: ActivityMercaderBinding
@@ -22,7 +23,7 @@ class Mercader : AppCompatActivity() {
         var persString = compartir.getString("Personaje", "")
         val pers = gson.fromJson(persString, Personaje::class.java)
 
-        val objeto = ObjetoC("Scouter", 5,10,20)
+        val objeto = ObjetoC("Scouter", 5,1000,20)
         var cantidad = 0
 
         binding.coins.text = pers.getDinero().toString()
@@ -54,6 +55,8 @@ class Mercader : AppCompatActivity() {
             binding.confirmar.visibility = View.GONE
             binding.coins.visibility = View.GONE
             binding.zeni.visibility = View.GONE
+            binding.zeni2.visibility = View.GONE
+            binding.coins2.visibility = View.GONE
         }
 
         //al pulsar el boton comprar, se ocultan los botones de cancelar y vender
@@ -76,15 +79,20 @@ class Mercader : AppCompatActivity() {
             binding.mas.visibility = View.VISIBLE
             binding.menos.visibility = View.VISIBLE
             binding.cantidad.visibility = View.VISIBLE
+            binding.zeni2.visibility = View.VISIBLE
+            binding.coins2.visibility = View.VISIBLE
 
             binding.confirmar.setOnClickListener(){
                 if(cantidad * objeto.valor <= pers.getDinero()){
-                    pers.setDinero(pers.getDinero() - objeto.valor*cantidad)
                     if(cantidad * objeto.peso <= pers.getPesoMochila()){
                         pers.mochila.add(objeto)
                         pers.setPesoMochila(pers.getPesoMochila() - objeto.peso*cantidad)
+                        pers.setDinero(pers.getDinero() - objeto.valor*cantidad)
+                        pers.setDefensa(pers.getDefensa() *2)
                         binding.coins.text = pers.getDinero().toString()
-                        Toast.makeText(this, "Has comprado ${cantidad} ${objeto.nombre}", Toast.LENGTH_SHORT).show()
+
+                        Toast.makeText(this, "Has comprado ${cantidad} ${objeto.nombre}.\n" +
+                                "Defensa X2", Toast.LENGTH_SHORT).show()
                     }
                     else{
                         Toast.makeText(this, "No tienes espacio en la mochila", Toast.LENGTH_SHORT).show()
@@ -99,6 +107,9 @@ class Mercader : AppCompatActivity() {
         //boton vender
         binding.vender.setOnClickListener(){
             binding.mercader.setImageResource(R.drawable.mochila)
+
+            binding.zeni2.visibility = View.GONE
+            binding.coins2.visibility = View.GONE
 
             binding.confirmar.visibility = View.VISIBLE
             binding.mas.visibility = View.VISIBLE

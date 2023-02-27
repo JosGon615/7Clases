@@ -104,27 +104,26 @@ class Combate : AppCompatActivity() {
         }
 
         binding.objetoC.setOnClickListener() {
-            if(pers.getVida() < vida){
-                var flag = false
-                pers.mochila.forEach(){
-                    if(it.nombre == "Senzu"){
+            val eliminarSenzu = pers.mochila.find { it.nombre == "Senzu" }
+            var flag = false
+            pers.mochila.forEach(){
+                if(it.nombre == "Senzu"){
                         flag = true
                     }
-                }
-                if(flag){
-                    pers.setVida(pers.getVida() + 20)
-                    if(pers.getVida() > vida){
-                        pers.setVida(vida)
-                    }
+            }
+            if(flag){
+                if(pers.getVida() < vida){
+                    pers.setVida(vida - pers.getVida())
+                    pers.mochila.remove(eliminarSenzu)
                     atacar(binding.vidaP, pers.getVida())
-                    pers.mochila.remove(senzu)
+                    Toast.makeText(this, "Has usado una semilla Senzu, recuperas toda tu vida", Toast.LENGTH_SHORT).show()
                 }
                 else{
-                    Toast.makeText(this, "No tienes semillas Senzu", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Tu vida esta al maximo", Toast.LENGTH_SHORT).show()
                 }
             }
             else{
-                Toast.makeText(this, "Tu vida esta al maximo", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "No tienes senzus", Toast.LENGTH_SHORT).show()
             }
         }
    }

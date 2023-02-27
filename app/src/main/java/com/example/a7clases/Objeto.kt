@@ -19,38 +19,38 @@ class Objeto : AppCompatActivity() {
         var persString = compartir.getString("Personaje", "")
         val pers = gson.fromJson(persString, Personaje::class.java)
 
+        val radar = ObjetoC("Radar", 5, 10, 20)
+        val senzu = ObjetoC("Senzu", 5, 10, 20)
         val db1 = ObjetoC("Dragon Ball 1", 10, 100, 20)
         val db2 = ObjetoC("Dragon Ball 2", 10, 100, 20)
         val db3 = ObjetoC("Dragon Ball 3", 10, 100, 20)
         val db4 = ObjetoC("Dragon Ball 4", 10, 100, 20)
         val db5 = ObjetoC("Dragon Ball 5", 10, 100, 20)
         val db6 = ObjetoC("Dragon Ball 6", 10, 100, 20)
-        val db7 = ObjetoC("Dragon Ball 7", 10, 10, 20)
-        val radar = ObjetoC("Radar", 5, 10, 20)
-        val senzu = ObjetoC("Senzu", 5, 10, 20)
-
-        val listaObjetos = arrayListOf<ObjetoC>(db1, db2, db3, db4, db5, db6, db7)
+        val db7 = ObjetoC("Dragon Ball 7", 10, 100, 20)
 
         var flag = false
-
         var aleatorio = 0
+        var objeto = ObjetoC()
 
-
+        //comprueba si tienes radar
         pers.mochila.forEach() {
             if (it.nombre == "Radar") {
                 flag = true
             }
         }
 
+        //si no tienes radar no aparecen las dragon balls
         if (!flag) {
             aleatorio = (1..10).random()
         }
+
+        //si tienes radar aparecen las dragon balls y el radar deja de aparecer
         else {
             aleatorio = (7..50).random()
         }
 
-        var objeto = ObjetoC()
-
+        //selecciona un objeto aleatorio
         when (aleatorio) {
             in 1..6 -> {
                 binding.objeto.setBackgroundResource(R.drawable.radar)
@@ -64,34 +64,31 @@ class Objeto : AppCompatActivity() {
                 binding.objeto.setBackgroundResource(R.drawable.dbuno)
                 objeto = db1
             }
-            in 17..32 -> {
+            in 17..22 -> {
                 binding.objeto.setBackgroundResource(R.drawable.dbdos)
                 objeto = db2
             }
-            in 33..43 -> {
+            in 23..28 -> {
                 binding.objeto.setBackgroundResource(R.drawable.dbtres_)
                 objeto = db3
             }
-            in 42..45 -> {
+            in 29..34 -> {
                 binding.objeto.setBackgroundResource(R.drawable.dbcuatro_)
                 objeto = db4
             }
-            in 46..47 -> {
+            in 35..40 -> {
                 binding.objeto.setBackgroundResource(R.drawable.dbcinco)
                 objeto = db5
             }
-            in 48..49 -> {
+            in 41..46 -> {
                 binding.objeto.setBackgroundResource(R.drawable.dbseis)
                 objeto = db6
             }
-            50 -> {
+            in 47..50 -> {
                 binding.objeto.setBackgroundResource(R.drawable.dbsiete)
                 objeto = db7
             }
         }
-
-
-
 
         //solo se puede recoger una bola de dragon de cada
         binding.recoger.setOnClickListener {
@@ -115,11 +112,13 @@ class Objeto : AppCompatActivity() {
             }
         }
 
-
+        //si recoges las 7 bolas de dragon te lleva a la pantalla de shenron sino te lleva al dado
         binding.continuar.setOnClickListener {
+
             pers.contadorDragonBall = 0
             flag = false
-            //si posees las 7 dragon balls, aparecerá shenron
+
+
             pers.mochila.forEach() {
                 if(it.nombre == "Dragon Ball 1") {
                     pers.contadorDragonBall++
@@ -166,7 +165,6 @@ class Objeto : AppCompatActivity() {
                 startActivity(intent)
             }
         }
-
 
     }
 }

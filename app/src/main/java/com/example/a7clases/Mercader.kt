@@ -88,7 +88,7 @@ class Mercader : AppCompatActivity() {
                         pers.mochila.add(objeto)
                         pers.setPesoMochila(pers.getPesoMochila() - objeto.peso*cantidad)
                         pers.setDinero(pers.getDinero() - objeto.valor*cantidad)
-                        pers.setDefensa(pers.getDefensa() *2)
+                        pers.setDefensa(pers.getDefensa() * 2)
                         binding.coins.text = pers.getDinero().toString()
 
                         Toast.makeText(this, "Has comprado ${cantidad} ${objeto.nombre}.\n" +

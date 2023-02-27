@@ -17,7 +17,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.011"
         app:srcCompat="@drawable/landdbz"
-        tools:ignore="ContentDescription,UnknownId,ImageContrastCheck" />
+        tools:ignore="ContentDescription,UnknownId,ImageContrastCheck,VisualLintBounds" />
 
     <TextView
         android:id="@+id/textView"
@@ -32,21 +32,8 @@
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.774"
+        app:layout_constraintVertical_bias="0.819"
         tools:ignore="HardcodedText,TextSizeCheck" />
-
-    <ImageButton
-        android:id="@+id/dado"
-        android:layout_width="232dp"
-        android:layout_height="209dp"
-        android:background="#00FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/dado"
-        tools:ignore="ContentDescription,SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
 
     <ImageButton
         android:id="@+id/imageButton3"
@@ -58,7 +45,39 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.921"
-        app:srcCompat="@drawable/mochilap" />
+        app:layout_constraintVertical_bias="0.956"
+        app:srcCompat="@drawable/mochilap"
+        tools:ignore="ContentDescription,ImageContrastCheck,SpeakableTextPresentCheck" />
+
+    <ImageButton
+        android:id="@+id/dado"
+        android:layout_width="214dp"
+        android:layout_height="206dp"
+        android:background="#00FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.543"
+        app:srcCompat="@drawable/dado"
+        tools:ignore="ContentDescription,SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
+
+    <LinearLayout
+        android:layout_width="54dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/contador"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/cero" />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

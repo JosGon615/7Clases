@@ -17,5 +17,7 @@ class Ciudad : AppCompatActivity() {
             val intent = Intent(this@Ciudad, Dado::class.java)
             startActivity(intent)
         }
+
+        binding.entrar.isEnabled = false
     }
 }

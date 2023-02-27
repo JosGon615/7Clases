@@ -27,7 +27,7 @@
     <string name="terrricola">terrricola</string>
     <string name="androide">androide</string>
     <string name="siete_esferas">Has reunido las siete esferas del dragón! Puedes pedir un deseo.</string>
-    <string name="compar">compar</string>
+    <string name="comprar">comprar</string>
     <string name="vender">vender</string>
     <string name="cancelar">cancelar</string>
     <string name="mas">+</string>
@@ -37,4 +37,7 @@
     <string name="salir">salir</string>
     <string name="objeto">objeto</string>
     <string name="atacar">atacar</string>
+    <string name="reiniciar">reiniciar</string>
+    <string name="fortuna">fortuna</string>
+    <string name="poder">poder</string>
 </resources>

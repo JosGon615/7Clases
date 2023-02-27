@@ -2,6 +2,7 @@ package com.example.a7clases
 
 import android.annotation.SuppressLint
 import android.content.Intent
+import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.a7clases.databinding.ActivityMainBinding
@@ -15,8 +16,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        var pers = Personaje()
-
+         val pers = Personaje()
 
         //cambiar imagen al pulsar el boton
         binding.kame.setOnClickListener {

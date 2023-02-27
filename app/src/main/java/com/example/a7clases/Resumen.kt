@@ -41,10 +41,10 @@ class Resumen : AppCompatActivity() {
 
         //mostrar valores aleatorios
         binding.fuerza.text = (10..15).random().toString()
-        binding.defensa.text = (1..15).random().toString()
+        binding.defensa.text = (1..5).random().toString()
         binding.vida.text = 200.toString()
         binding.mochila.text = 100.toString()
-        binding.monedero.text = 9999.toString()
+        binding.monedero.text = 0.toString()
 
         //si pulsa volver, vuelve a la pantalla principal
         binding.volver.setOnClickListener {
@@ -54,7 +54,6 @@ class Resumen : AppCompatActivity() {
 
         //si pulsa comenzar, pasa a la pantalla de juego
         binding.comenzar.setOnClickListener {
-            print("hola")
             val intent = Intent(this@Resumen, Dado::class.java)
             startActivity(intent)
         }
@@ -64,7 +63,7 @@ class Resumen : AppCompatActivity() {
         binding.comenzar.setOnClickListener {
             val fuerza = binding.fuerza.text.toString().toInt()
             val defensa = binding.defensa.text.toString().toInt()
-            val vida = binding.vida.text.toString().toInt()
+            val vida = 500
             val nombre = binding.nombre.text.toString()
             val mochila = binding.mochila.text.toString().toInt()
             val dinero = binding.monedero.text.toString().toInt()

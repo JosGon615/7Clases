@@ -20,6 +20,15 @@ class Dado : AppCompatActivity() {
 
         var resultado = 0
 
+        when (pers.contador){
+            0 -> binding.contador.setImageResource(R.drawable.cero)
+            1 -> binding.contador.setImageResource(R.drawable.uno)
+            2 -> binding.contador.setImageResource(R.drawable.dos)
+            3 -> binding.contador.setImageResource(R.drawable.tres)
+            4 -> binding.contador.setImageResource(R.drawable.cuatro)
+            5 -> binding.contador.setImageResource(R.drawable.cinco)
+        }
+
         //funcion cuando se pulsa el dado se genera un resutlado aleatorio
         binding.dado.setOnClickListener {
             resultado = 0
@@ -37,7 +46,7 @@ class Dado : AppCompatActivity() {
                     persString = gson.toJson(pers)
                     editor.putString("Personaje", persString)
                     editor.apply()
-                    val intent = Intent(this@Dado, Ciudad::class.java)
+                    val intent = Intent(this@Dado, Enemigo::class.java)
                     startActivity(intent)
                 }
                 2 -> {
@@ -53,7 +62,7 @@ class Dado : AppCompatActivity() {
                     persString = gson.toJson(pers)
                     editor.putString("Personaje", persString)
                     editor.apply()
-                    val intent = Intent(this@Dado, Enemigo::class.java)
+                    val intent = Intent(this@Dado, Ciudad::class.java)
                     startActivity(intent)
                 }
 

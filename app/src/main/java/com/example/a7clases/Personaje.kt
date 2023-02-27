@@ -1,5 +1,7 @@
 package com.example.a7clases
 
+import kotlin.collections.ArrayList
+
 class Personaje{
     private var nombre: String = ""
     private var pesoMochila: Int = 0
@@ -23,6 +25,9 @@ class Personaje{
         this.vida = vida
         this.mochila = mochila
     }
+
+    var contador = 0
+    var contadorDragonBall = 0
 
     fun getNombre(): String{
         return nombre
@@ -91,6 +96,18 @@ class Personaje{
     override fun toString(): String {
         return "Personaje(mochila=$mochila)"
     }
+
+    fun atacar(enemigo: EnemigoC): Boolean {
+        val random = (1..6).random()
+        if (random > 3) {
+            val damage = fuerza*2
+            enemigo.setVida(enemigo.getVida() - damage)
+            return true
+        } else {
+            return false
+        }
+    }
+
 
 
 }

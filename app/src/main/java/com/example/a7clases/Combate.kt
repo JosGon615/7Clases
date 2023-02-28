@@ -22,7 +22,7 @@ class Combate : AppCompatActivity() {
         var persString = compartir.getString("Personaje", "")
         val pers = gson.fromJson(persString, Personaje::class.java)
 
-        val vida = 500
+        var vida = 500
 
         val senzu = ObjetoC("Senzu", 5,10,20)
         val enemigo = EnemigoC("Goku Black",vida)
@@ -113,7 +113,8 @@ class Combate : AppCompatActivity() {
             }
             if(flag){
                 if(pers.getVida() < vida){
-                    pers.setVida(vida - pers.getVida())
+                    vida -= pers.getVida()
+                    pers.setVida(vida)
                     pers.mochila.remove(eliminarSenzu)
                     atacar(binding.vidaP, pers.getVida())
                     Toast.makeText(this, "Has usado una semilla Senzu, recuperas toda tu vida", Toast.LENGTH_SHORT).show()

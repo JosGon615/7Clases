@@ -115,13 +115,7 @@ class Objeto : AppCompatActivity() {
         //si recoges las 7 bolas de dragon te lleva a la pantalla de shenron sino te lleva al dado
         binding.continuar.setOnClickListener {
 
-            val eliminardb1 = pers.mochila.find { it.nombre == "Dragon Ball 1" }
-            val eliminardb2 = pers.mochila.find { it.nombre == "Dragon Ball 2" }
-            val eliminardb3 = pers.mochila.find { it.nombre == "Dragon Ball 3" }
-            val eliminardb4 = pers.mochila.find { it.nombre == "Dragon Ball 4" }
-            val eliminardb5 = pers.mochila.find { it.nombre == "Dragon Ball 5" }
-            val eliminardb6 = pers.mochila.find { it.nombre == "Dragon Ball 6" }
-            val eliminardb7 = pers.mochila.find { it.nombre == "Dragon Ball 7" }
+
 
             pers.contadorDragonBall = 0
             flag = false
@@ -158,14 +152,6 @@ class Objeto : AppCompatActivity() {
                 persString = gson.toJson(pers)
                 editor.putString("Personaje", persString)
                 editor.apply()
-
-                pers.mochila.remove(eliminardb1)
-                pers.mochila.remove(eliminardb2)
-                pers.mochila.remove(eliminardb3)
-                pers.mochila.remove(eliminardb4)
-                pers.mochila.remove(eliminardb5)
-                pers.mochila.remove(eliminardb6)
-                pers.mochila.remove(eliminardb7)
 
                 val intent = Intent(this@Objeto, Shenron::class.java)
                 startActivity(intent)
